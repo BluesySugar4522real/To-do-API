@@ -59,4 +59,17 @@ public class ChallengeService {
 
         return true;
     }
+
+    public List<Challenge> sortByTag(String tag) {
+        List<Challenge> challenges = new ArrayList<>();
+
+        for (Challenge c : Cr.findAll()) {
+            if (c.getTag().toLowerCase().replace(" ", "").equals(tag)) {
+                challenges.add(c);
+            }
+        }
+
+        return challenges;
+    }
+
 }
